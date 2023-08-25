@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bicycle Colorado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/slick-theme.css" />
+    <link rel="stylesheet" href="./css/slick.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="searchbar-outer">
+      <div class="searchbar-inner">
+        <form>
+          <input type="text" placeholder="enter search" />
+          <span onclick="closeSearch()" class="x-mark"
+            ><i class="fa-solid fa-xmark"></i
+          ></span>
+          <span class="search-inner-icon"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+        </form>
+      </div>
+    </div>
+    <!-- HEADER-TOP -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <a><img src="./images/BC-logo.png" alt="bc-logo" /></a>
+        </div>
+        <div class="header-right">
+          <div class="header-top">
+            <ul class="ht-list">
+              <li><a href="#">calendar</a></li>
+              <li><a href="#">volunteer</a></li>
+              <li><a href="#">business directory</a></li>
+              <li><a href="#">shop</a></li>
+              <li><a href="#">member sign up</a></li>
+            </ul>
+            <span onclick="openSearch()" class="search-icon"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></span>
+          </div>
+          <nav class="nav-bar">
+            <ul class="nav-list">
+              <li class="dropdown-menu">
+                <a href="#">join us</a>
+                <ul class="dropdown-content">
+                  <li class="sub-menu">
+                    <a href="#">about us</a
+                    ><span onclick="menuToggle()"
+                      ><i class="fa-solid fa-angle-down"></i
+                    ></span>
+                    <ul class="submenu-content">
+                      <li><a href="#">personal injury</a></li>
+                      <li><a href="#">car accident</a></li>
+                      <li class="submenu-list">
+                        <a href="#">construction accident</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#">car accident</a></li>
+                  <li><a href="#">construction accident</a></li>
+                  <li><a href="#">bike news</a></li>
+                  <li><a href="#">initiatives</a></li>
+                  <li><a href="#">events</a></li>
+                </ul>
+              </li>
+              <li><a href="#">ride colorrado</a></li>
+              <li><a href="#">get involved</a></li>
+              <li><a href="#">bike news</a></li>
+              <li><a href="#">initiatives</a></li>
+              <li><a href="#">events</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- banner section starts heree -->
+    <section class="banner-section">
+      <div class="pentagon"></div>
+      <div class="triangle"></div>
+      <div class="banner-inner">
+        <div class="banner-caption">
+          <span class="sub-title">find your</span>
+          <h1 class="title">
+            mountain are my <span class="title-text">Joyride </span>
+          </h1>
+          <div class="tagline">
+            <p>
+              Welcome to Bicycle Colorado. Use The Hub to find world-class rides
+              around Colorado.
+            </p>
+          </div>
+        </div>
+        <div class="hub-row">
+          <div class="hub-inner">
+            <h2>the hub</h2>
+            <form>
+              <label for="region">region:</label>
+              <select name="region" id="region">
+                <option value="Denver">Denver</option>
+                <option value="Denver">Denver</option>
+                <option value="Denver">Denver</option>
+              </select>
+              <label for="topic">Topic:</label>
+              <select name="topic" id="region">
+                <option value="trails">Trails</option>
+                <option value="trails">Trails</option>
+                <option value="trails">Trails</option>
+              </select>
+            </form>
+            <a href="#" class="default-btn">explore</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- road rule section -->
+    <section class="road-rules-section">
+      <div class="rules-inner">
+        <div class="maps-col">
+          <div class="map-wrapper">
+            <img src="./images/map icon.png" alt="map-icon" />
+          </div>
+          <h3>bike maps</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus
+            purus, ullamcorper ac vestibulum eu.
+          </p>
+          <a href="#"> view maps >></a>
+        </div>
+        <div class="maps-col">
+          <div class="map-wrapper">
+            <img src="./images/rules-icon.png" alt="rules-icon" />
+          </div>
+          <h3>rules of the road</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus
+            purus, ullamcorper ac vestibulum eu.
+          </p>
+          <a class="view-map" href="#"> view maps >></a>
+        </div>
+        <div class="slider-content">
+          <div class="maps-col">
+            <div class="calender-wrapper">
+              <img src="./images/calendar icon.png" alt="rules-icon" />
+            </div>
+            <h3>Subaru VeloSwap</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus
+              purus, ullamcorper ac vestibulum eu.
+            </p>
+            <ul>
+              <li>
+                <a class="ver-bar" href="#"> view maps >></a>
+              </li>
+              <li><a href="#"> view maps >></a></li>
+            </ul>
+          </div>
+          <div class="maps-col">
+            <div class="calender-wrapper">
+              <img src="./images/calendar icon.png" alt="rules-icon" />
+            </div>
+            <h3>Subaru VeloSwap</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus
+              purus, ullamcorper ac vestibulum eu.
+            </p>
+            <ul>
+              <li>
+                <a class="ver-bar" href="#"> view maps >></a>
+              </li>
+              <li><a href="#"> view maps >></a></li>
+            </ul>
+          </div>
+          <div class="maps-col">
+            <div class="calender-wrapper">
+              <img src="./images/calendar icon.png" alt="rules-icon" />
+            </div>
+            <h3>Subaru VeloSwap</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus
+              purus, ullamcorper ac vestibulum eu.
+            </p>
+            <ul>
+              <li>
+                <a class="ver-bar" href="#"> view maps >></a>
+              </li>
+              <li><a href="#"> view maps >></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- membership-section -->
+    <section class="membership-section">
+      <div class="membership-row">
+        <div class="membership-item">
+          <div class="thumbnail">
+            <img src="./images/ms-img.png" alt="" />
+            <h3>get involved</h3>
+            <div class="overlay-row">
+              <ul class="overlay-list">
+                <li>take action</li>
+                <li>colorado advocacy groups</li>
+                <li>national advocacy groups</li>
+                <li>share the road licence plates</li>
+                <li>volunteer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="membership-item">
+          <div class="thumbnail">
+            <img src="./images/ms-img.png" alt="" />
+            <h3>initiative</h3>
+            <div class="overlay-row">
+              <ul class="overlay-list">
+                <li>take action</li>
+                <li>colorado advocacy groups</li>
+                <li>national advocacy groups</li>
+                <li>share the road licence plates</li>
+                <li>volunteer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="membership-item">
+          <div class="thumbnail">
+            <img src="./images/ms-img.png" alt="" />
+            <h3>events</h3>
+            <div class="overlay-row">
+              <ul class="overlay-list">
+                <li>take action</li>
+                <li>colorado advocacy groups</li>
+                <li>national advocacy groups</li>
+                <li>share the road licence plates</li>
+                <li>volunteer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="membership-item">
+          <div class="thumbnail">
+            <img src="./images/ms-img.png" alt="" />
+            <h3>ride colorado</h3>
+            <div class="overlay-row">
+              <ul class="overlay-list">
+                <li>take action</li>
+                <li>colorado advocacy groups</li>
+                <li>national advocacy groups</li>
+                <li>share the road licence plates</li>
+                <li>volunteer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/custom.js"></script>
+  </body>
+</html>

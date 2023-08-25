@@ -1,0 +1,602 @@
+/* ..... Global styling starts */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-size: 16px;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+  line-height: 1;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0px;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.default-btn {
+  display: inline-block;
+  padding: 18px 35px;
+  background-color: #5e8803;
+  text-transform: capitalize;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0px;
+  color: #fff;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.toggle-menu {
+  position: fixed;
+  visibility: hidden;
+  right: 10px;
+  top: 20px;
+  width: 25px;
+  height: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: black;
+}
+.toggle-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: black;
+}
+.toggle-menu::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: black;
+}
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  color: #000;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+}
+
+/* header starts */
+@media only screen and (min-width: 320px) {
+  .toggle-menu {
+    visibility: visible;
+  }
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .logo {
+    max-width: 250px;
+    padding: 15px 15px;
+  }
+  .nav-menu {
+    background-color: #f6d014;
+    padding: 26px 0px 0px;
+    display: none;
+    margin: auto;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .nav-list a {
+    margin: 0 0 10px;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    display: block;
+    text-transform: capitalize;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    color: #000;
+    padding: 5px 12px;
+    transition: 0.3s;
+  }
+  .nav-list a:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  .nav-list li a.default-btn {
+    color: #fff;
+    padding: 18px 35px;
+    transition: 0.3s;
+    border: 0;
+  }
+  .nav-list li a.default-btn:hover {
+    color: #000;
+  }
+  /* banner */
+  .banner-section {
+    padding: 0px 0 34px;
+    background-color: #e4e0e0;
+  }
+  .banner-left h1 {
+    padding-top: 56px;
+    color: #f90214;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: 0px;
+    padding-bottom: 20px;
+  }
+  .banner-left span {
+    display: block;
+  }
+  .banner-left p {
+    font-family: "Courier New", Courier, monospace;
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    padding-bottom: 20px;
+  }
+  .banner-left .default-btn {
+    font-size: 20px;
+    color: #fff;
+    background-color: #000;
+    padding: 15px 30px;
+  }
+  .banner-right {
+    padding: 36px 0 0;
+    max-width: 100%;
+  }
+  .img-wrapper {
+    position: relative;
+    max-width: 100%;
+  }
+  .pay-cash {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+    width: 50%;
+  }
+  /* offer-section */
+  .offer-section {
+    padding: 82px 0px 91px;
+  }
+  .offer-section h2 {
+    font-size: 20px;
+    padding-bottom: 55px;
+  }
+  .offer-form {
+    padding: 0px 20px;
+  }
+  .input-field input {
+    width: 100%;
+    padding: 12px 0px 12px 22px;
+    font-family: "Courier New", Courier, monospace;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+    margin-bottom: 18px;
+    text-transform: capitalize;
+    background-color: #e4e0e0;
+    border: 0;
+  }
+  .address-field input {
+    padding: 12px 0px 130px 22px;
+  }
+  .offer-form .default-btn {
+    width: 100%;
+    border: 0;
+    background-color: #f6d014;
+    font-size: 20px;
+    text-align: center;
+    padding: 12px 0px;
+    color: #000;
+  }
+  /* conditons section */
+  .conditions-section {
+    background-color: #e4e0e0;
+    padding: 76px 0px 82px;
+  }
+  .conditions-section h2 {
+    font-size: 20px;
+    padding-bottom: 76px;
+  }
+  .conditions-left {
+    width: 100%;
+  }
+  .conditions-row {
+    display: block;
+  }
+  .conditions-wrapper {
+    max-width: 100%;
+    position: relative;
+  }
+  .any-conditions {
+    width: 50%;
+    position: absolute;
+    right: 17px;
+    bottom: 17px;
+  }
+  .conditions-right {
+    width: 100%;
+    padding-top: 30px;
+  }
+  .conditions-right p {
+    font-family: "Courier New", Courier, monospace;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+  }
+  /* payment section */
+  .payment-section {
+    padding: 80px 0px 88px;
+  }
+  .payment-section h2 {
+    font-size: 20px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid #f6d014;
+  }
+  .payment-row {
+    padding-top: 89px;
+  }
+  .payment-left p {
+    font-family: "Courier New", Courier, monospace;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0px;
+  }
+  .payment-left p.helping-homeowners {
+    font-weight: 700;
+    font-size: 18px;
+    padding-bottom: 37px;
+  }
+  .payment-right {
+    padding-top: 30px;
+  }
+  .payment-wrapper {
+    max-width: 100%;
+    position: relative;
+  }
+  .we-pay-cash {
+    position: absolute;
+    width: 50%;
+    right: 15px;
+    bottom: 15px;
+  }
+  /* process section */
+  .process-section {
+    background-color: #000;
+    padding: 85px 0px 70px;
+  }
+  .process-section h2 {
+    color: #fff;
+    font-size: 20px;
+  }
+  .process-row {
+    padding: 75px 0px 71px;
+  }
+  .process-left:not(:first-child) {
+    padding-top: 20px;
+  }
+  .process-left span {
+    display: block;
+    padding-top: 25px;
+    font-family: "Courier New", Courier, monospace;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+  }
+  .process-section p {
+    font-family: "Courier New", Courier, monospace;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+  }
+  /* footer */
+  .footer {
+    background-color: #f1f1ef;
+    padding: 25px 0px;
+  }
+  .footer span {
+    display: block;
+    font-family: "Courier New", Courier, monospace;
+    color: #333333;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+  }
+  .footer span:not(:last-child) {
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .toggle-menu {
+    visibility: hidden;
+  }
+  .logo {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px 0 20px;
+  }
+  .nav-menu {
+    display: block;
+  }
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-list li a {
+    border-bottom: none;
+  }
+
+  /* banner section */
+  .banner-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .banner-left {
+    padding-top: 20px;
+    width: 46%;
+  }
+  .banner-right {
+    width: 46%;
+  }
+  /* offer section  */
+  .offer-section .container {
+    max-width: 90%;
+  }
+  /* .conditions-section */
+  .conditions-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .conditions-left {
+    width: 46%;
+  }
+  .conditions-right {
+    width: 46%;
+    padding-top: 0px;
+  }
+  .conditions-right p {
+    font-size: 19px;
+  }
+  /* payment-section */
+  .payment-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .payment-section h2 {
+    font-size: 20px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid #f6d014;
+  }
+  .payment-left {
+    max-width: 46%;
+    padding-top: 20px;
+  }
+  .payment-right {
+    max-width: 46%;
+    padding-top: 0;
+  }
+  .payment-left p {
+    font-family: "Courier New", Courier, monospace;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0px;
+  }
+  .payment-left p.helping-homeowners {
+    font-weight: 700;
+    font-size: 18px;
+    padding-bottom: 37px;
+  }
+  .payment-wrapper {
+    max-width: 100%;
+    position: relative;
+  }
+  /* process section */
+  .process-section .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .process-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .process-left {
+    max-width: 30%;
+  }
+  .process-left:not(:first-child) {
+    padding-top: 0px;
+  }
+  .process-section h2 {
+    font-size: 25px;
+  }
+  .process-left p {
+    font-size: 18px;
+  }
+  .process-left span {
+    font-size: 17px;
+  }
+}
+@media only screen and (min-width: 930px) {
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .logo {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 76px 0 46px;
+  }
+  .header .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .nav-bar {
+    max-width: 1048px;
+    margin: 0 auto;
+  }
+  .nav-list li a {
+    font-size: 30px;
+  }
+  /* banner */
+  .banner-left {
+    width: 464px;
+    padding-top: 54px;
+  }
+  .banner-left h1 {
+    font-size: 40px;
+  }
+  .banner-left h1 {
+    font-size: 40px;
+    padding: 0px 0px 31px;
+  }
+  .banner-left p {
+    padding: 0px 0px 35px;
+  }
+  /* offer-section */
+  .offer-section h2 {
+    font-size: 35px;
+  }
+  .offer-form {
+    max-width: 959px;
+    margin: 0 auto;
+  }
+  .input-field input {
+    font-size: 25px;
+  }
+  .offer-form .default-btn {
+    font-size: 28px;
+  }
+  /* .conditions-section */
+  .conditions-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .conditions-section h2 {
+    font-size: 30px;
+    text-align: center;
+    max-width: 745px;
+  }
+  .conditions-row {
+    width: 100%;
+  }
+  .nditions-right {
+    padding-top: 0px;
+  }
+  .conditions-right p {
+    font-size: 23px;
+  }
+  /* payment section */
+  .payment-section .container {
+    padding: 0;
+  }
+  .payment-section h2 {
+    font-size: 30px;
+    border-bottom: 1px solid #f6d014;
+  }
+  .payment-left p {
+    font-family: "Courier New", Courier, monospace;
+    color: #000;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 1.2;
+    letter-spacing: 0px;
+  }
+  .payment-left p.helping-homeowners {
+    font-weight: 700;
+    font-size: 28.58px;
+    padding-bottom: 37px;
+  }
+  .payment-left {
+    max-width: 538px;
+    padding-top: 30px;
+  }
+  .payment-right {
+    max-width: 543px;
+  }
+  /* process-section */
+  .process-row {
+    max-width: 1059px;
+    margin: 0 auto;
+  }
+  .process-left {
+    max-width: 280px;
+  }
+  .process-left:not(:first-child) {
+    padding-top: 0px;
+  }
+  .process-section h2 {
+    font-size: 34.72px;
+  }
+  .process-section p {
+    width: 931px;
+    margin: 0 auto;
+    font-size: 19.44px;
+    text-align: center;
+  }
+  .process-left span {
+    font-size: 19.44px;
+  }
+}

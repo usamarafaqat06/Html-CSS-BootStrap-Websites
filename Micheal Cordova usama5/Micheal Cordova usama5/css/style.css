@@ -1,0 +1,1819 @@
+/* global style here */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/Oswald-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Nunito;
+  src: url(../fonts/NunitoSans_7pt-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: NunitoBold;
+  src: url(../fonts/NunitoSans_10pt-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: Halant;
+  src: url(../fonts/Halant-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: HalantBold;
+  src: url(../fonts/Halant-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: OpenSans;
+  src: url(../fonts/OpenSans-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: segoe regular;
+  src: url(../fonts/SEGOEUI.TTF);
+}
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+}
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+  color: #000;
+}
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.default-btn {
+  background-color: #ff7b14;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  font-style: 22px;
+  padding: 12px 19px;
+  border-radius: 22px;
+}
+
+@media only screen and (min-width: 320px) {
+  .container {
+    padding: 0px 15px;
+  }
+  /* header */
+  .toggle-menu {
+    position: fixed;
+    visibility: visible;
+    right: 15px;
+    top: 35px;
+    width: 25px;
+    height: 2px;
+    cursor: pointer;
+    transition: 0.6s;
+    background-color: #fff;
+    z-index: 99;
+  }
+  .toggle-menu::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.6s;
+    background-color: #fff;
+  }
+  .toggle-menu::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.6s;
+    background-color: #fff;
+  }
+  .crossicon.toggle-menu::before {
+    transition: 0.6s;
+    display: none;
+  }
+  .crossicon.toggle-menu {
+    transform: rotate(-45deg);
+    transition: 0.6s;
+  }
+  .crossicon.toggle-menu::after {
+    transform: rotate(90deg);
+    transition: 0.6s;
+    top: 0;
+  }
+  .header {
+    width: 100%;
+    position: fixed;
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .logo {
+    width: 200px;
+  }
+  .desk-logo {
+    display: none;
+  }
+  .nav-bar {
+    background-color: #fff;
+    margin: 20px 0 0 0;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: 0.5s;
+    z-index: 99;
+    padding: 0px 10px;
+  }
+  .show {
+    visibility: visible;
+    opacity: 1;
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    top: 70px;
+    background-color: #fff;
+    transition: 0.4s;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    transition: 0.5s;
+  }
+  .nav-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-list li {
+    padding: 10px 0px;
+    border-bottom: 1px solid #ff7b14;
+  }
+  .nav-list li a {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: #707070;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .nav-list li a.default-btn {
+    color: #fff;
+  }
+  .dropdown-menu {
+    position: relative;
+  }
+  .dropdown-menu i {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    color: #ff7b14;
+  }
+  .dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    position: static;
+    transition: 0.7s;
+    padding: 10px 0 0 0;
+    background-color: #ff7b14;
+  }
+  .dropdown-content li:last-child {
+    border: 0;
+  }
+  .dropdown-content li a {
+    padding: 12px 12px 10px;
+    text-align: left;
+    transition: 0.3s;
+    font-size: 16px;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    text-transform: uppercase;
+  }
+  .dropdown-content li {
+    border-bottom: 1px solid #ff9340;
+  }
+
+  .dropdown-content li a:hover {
+    color: #572a08;
+    background-color: transparent;
+  }
+  .dropdown-menu:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    height: 300px;
+    transition: 0.7s;
+  }
+  .lang-selector {
+    position: relative;
+    padding: 15px 0px 12px;
+  }
+
+  .header-contact {
+    display: none;
+    padding: 22px 24px 22px 33px;
+    width: 295px;
+    background-color: #572b0a;
+    margin-bottom: -10px;
+  }
+  .header-contact a {
+    color: #fff;
+    font-size: 36px;
+    font-family: "HalantBold", sans-serif;
+    line-height: 1;
+  }
+  .header-contact span {
+    color: #fff;
+    font-family: "NunitoBold", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .header-contact span {
+    display: block;
+  }
+  /* banner-section */
+  .banner-section {
+    background: url("../images/mobilebanner.jpg") no-repeat center;
+    background-size: cover;
+    padding: 400px 0px 82px 0px;
+  }
+  .banner-col {
+    max-width: 689px;
+  }
+  .banner-section h1 {
+    font-size: 18px;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    text-transform: capitalize;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .banner-caption {
+    display: block;
+    font-size: 30px;
+    width: 300px;
+    color: #fff;
+    font-family: "Halant", sans-serif;
+    text-transform: capitalize;
+    line-height: 1.1;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .banner-caption strong {
+    font-family: "HalantBold", sans-serif;
+  }
+  .banner-subtitle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    padding: 0px 0px 30px;
+  }
+  .banner-subtitle strong {
+    font-family: "NunitoBoldoldItalic", sans-serif;
+  }
+  .banner-section .default-btn {
+    display: none;
+    padding: 15px 0;
+    font-size: 22px;
+    text-align: center;
+    min-width: 285px;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    border-radius: 32px;
+    transition: 0.3s;
+    margin-bottom: 34px;
+  }
+  .banner-section .default-btn:hover {
+    transform: scale(1.1);
+  }
+  .banner-quote-slider {
+    display: none !important;
+  }
+  .banner-quote-slider::before {
+    content: "";
+    position: absolute;
+    background: url(../images/qoute-icon.png) no-repeat center;
+    background-size: contain;
+    width: 26px;
+    height: 19px;
+    left: 0;
+    top: 21px;
+  }
+  .banner-quote p {
+    font-size: 19px;
+    color: #fff;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    line-height: 1;
+    padding: 0px 0px 10px 0px;
+  }
+  .banner-quote span {
+    display: block;
+    text-align: end;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    font-family: "segoe", sans-serif;
+  }
+  .banner-logo-row {
+    padding-top: 25px;
+    max-width: 470px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .banner-logo-row img {
+    width: 90%;
+  }
+  /* attorney-section  */
+  .attorney-section {
+    padding: 100px 0px 160px;
+    background-color: #281506;
+    position: relative;
+  }
+  .attorney-section .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .attorney-section::before {
+    content: "";
+    background: url(../images/man.png) left top no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0px;
+    top: 150px;
+    width: 150px;
+    height: 300px;
+  }
+  .attorney-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .attorney-tagline {
+    font-family: "Halant Regular", sans-serif;
+    font-size: 32px;
+    line-height: 1.5;
+    color: #fff;
+  }
+  .attorney-tagline strong {
+    font-family: "HalantBold", sans-serif;
+  }
+  .attorney-slider-title {
+    font-family: "Halant Regular", sans-serif;
+    font-size: 33px;
+    line-height: 1;
+    color: #ff7b14;
+    display: block;
+    padding: 30px 0px 35px;
+    text-transform: uppercase;
+  }
+  .attorney-slider {
+    max-width: 290px;
+  }
+  .attorney-slider-content {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .attorney-slider .slick-dots li {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: #ff7c14;
+  }
+  .attorney-slider .slick-dots li.slick-active {
+    background-color: #fff !important;
+  }
+  .attorney-slider-content p {
+    font-size: 14.5px;
+    text-align: center;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.8;
+    padding: 28px 0 0 0;
+    margin-bottom: 28px;
+  }
+  .icon-wrapper {
+    width: 119px;
+  }
+  .attorney-section::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 135px;
+    width: 1px;
+    background-color: #8c440c;
+    top: -57px;
+    left: 50%;
+  }
+  .attorney-right {
+    margin: 20px 0 0;
+  }
+  .attorney-right p {
+    font-family: "Halant", sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #fff;
+    padding: 0 0 25px;
+  }
+  .attorney-right a {
+    display: inline;
+    color: #ff7b14;
+    font-size: 16px;
+    font-family: "NunitoBold", sans-serif;
+  }
+  /* case-result-section */
+  .case-result-section {
+    background-color: #ff7c14;
+    padding: 60px 0 45px 0;
+  }
+  .case-result-section .container {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .case-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .case-slider {
+    width: 270px;
+    margin-left: 20px;
+  }
+  .case-slider-content {
+    position: relative;
+  }
+  .case-slider .slick-dots li {
+    left: -20px;
+    margin-top: 20px !important;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #281506;
+  }
+  .case-slider .slick-dots li.slick-active {
+    background-color: #fff !important;
+  }
+  .title-center {
+    align-items: center;
+  }
+  .slick-prev {
+    left: -30px !important;
+    top: 40px !important;
+  }
+  .slick-next {
+    right: 0px !important;
+    top: 40px !important;
+  }
+  .title {
+    font-family: "Halant Regular";
+    font-size: 24px;
+    display: block;
+    color: #fff;
+    line-height: 1.1;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 20px 0 0 7px;
+  }
+  .amount {
+    display: inline;
+    font-size: 50px;
+    color: #fff;
+    line-height: 1;
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+    text-align: center;
+  }
+  .dollar-sign {
+    font-size: 50px;
+    color: #572b0a;
+    line-height: 1;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+  }
+  .case-right {
+    width: 225px;
+    margin: 40px 0 0;
+  }
+  .case-right .default-btn {
+    background-color: #ffdcc0;
+    padding: 19px 0px;
+    border-radius: 28px;
+    color: #722b0a;
+    border-radius: 28px;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-family: "Oswald", sans-serif;
+  }
+  /* .practice-area section */
+  .practice-area-section {
+    background: url(../images/practice-area.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+  }
+  .practice-area-section::before {
+    content: "";
+    background: url(../images/Practice\ Areas.png) no-repeat center;
+    background-size: cover;
+    height: 1000px;
+    width: 170px;
+    left: 28%;
+    top: -100px;
+    position: absolute;
+    display: block;
+  }
+
+  .practice-area-section .container {
+    padding: 100px 15px 40px 15px;
+    display: flex;
+    justify-content: end;
+  }
+  .practice-area-inner {
+    max-width: 740px;
+    columns: 1;
+    column-gap: 10px;
+    break-inside: avoid;
+    position: relative;
+  }
+
+  .practice-area-col {
+    margin: 30px 0px 0px 0px;
+    position: relative;
+    break-inside: avoid;
+    width: fit-content;
+  }
+  .services-box:first-child {
+    margin: 0px;
+  }
+  .practice-area-col h3 {
+    color: #ff7b14;
+    font-size: 24px;
+    text-transform: capitalize;
+    padding: 0px 0px 15px 0px;
+    line-height: 1;
+    font-family: "Halant", sans-serif;
+  }
+  .practice-area-col p {
+    color: #fff;
+    font-size: 14px;
+    text-transform: capitalize;
+    padding: 0px 0px 30px 0px;
+    line-height: 1.75;
+    font-family: "Nunito", sans-serif;
+  }
+  .practice-area-col a {
+    color: #ff7b14;
+    font-size: 18px;
+    text-transform: capitalize;
+    line-height: 1;
+    font-family: "HalantBold", sans-serif;
+    position: absolute;
+    bottom: 0;
+    right: 70px;
+    transition: 0.3s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .practice-area-col a::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    position: absolute;
+    left: -50px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #ff7b14;
+  }
+  .practice-area-col:hover a {
+    visibility: visible;
+    opacity: 1;
+  }
+  /* philosophy-section */
+  .philosophy-section {
+    background-color: #ffdbbf;
+    position: relative;
+    padding: 70px 0px;
+  }
+
+  .philosophy-section h2 span {
+    color: #572b0a;
+    font-size: 36px;
+    font-family: "Halant", sans-serif;
+    line-height: 1;
+    text-transform: capitalize;
+    display: block;
+  }
+  .philosophy-section h2 {
+    color: #ff7b14;
+    font-size: 46px;
+    font-family: "HalantBold", sans-serif;
+    line-height: 1;
+    padding: 0px 0px 35px 0px;
+    text-transform: uppercase;
+  }
+  .philosophy-tagline {
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.75;
+    color: #272727;
+    padding: 0px 0px 40px 0px;
+  }
+  .philosophy-detail {
+    max-width: 100%;
+    padding: 0px 0px 50px 0px;
+  }
+  .philosophy-detail h3 {
+    color: #272727;
+    font-size: 25px;
+    font-family: "Halant", sans-serif;
+    line-height: 1;
+    border-bottom: 1px solid #ff7b14;
+    text-transform: capitalize;
+    display: inline;
+  }
+  .philosophy-detail p {
+    color: #272727;
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.7;
+    padding: 0px 0px 25px 0px;
+    margin: 30px 0px 0px 0px;
+    border-bottom: #ff7b14;
+    display: block;
+  }
+  .philosophy-right {
+    position: relative;
+    right: 0;
+  }
+  .philosophy-right p {
+    color: #272727;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.3;
+    font-family: "Halant", sans-serif;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    bottom: -165px;
+    padding: 0px 15px;
+    box-sizing: border-box;
+  }
+  .philosophy-right p::before {
+    content: "";
+    width: 100%;
+    height: 155%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -50px;
+    background: url(../images/philosophy.png) no-repeat center;
+    background-size: cover;
+    z-index: -1;
+  }
+  .philosophy-right::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 22px);
+    height: 100%;
+    border: 2px solid #fff;
+    border-right: none;
+    top: -20px;
+    left: 10px;
+  }
+  /* rights-section */
+  .rights-section {
+    padding: 210px 0 75px 0;
+  }
+  .rights-section h2 {
+    font-family: "Halant", sans-serif;
+    font-size: 42px;
+    color: #ff7b14;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 0 25px 0;
+    line-height: 1;
+  }
+  .rights-tagline {
+    display: block;
+    font-family: "Nunito", sans-serif;
+    font-size: 22px;
+    color: #272727;
+    text-align: center;
+    padding: 0 0 60px 0;
+    line-height: 1;
+  }
+  .rights-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .rights-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 40px 0;
+    transition: 0.5s;
+  }
+  .rights-col img {
+    padding: 0 0 30px 0;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+  }
+  .rights-col h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    color: #ff7b14;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 0 30px 0;
+    line-height: 1;
+  }
+  .rights-col p {
+    font-family: "Nunito";
+    font-size: 16px;
+    color: #272727;
+    text-align: center;
+    line-height: 1.8;
+  }
+  .rights-col:hover {
+    opacity: 0.4;
+  }
+  /* about-section  */
+  .about-section {
+    background: url(../images/about-mobile-bg.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .about-section .container {
+    max-width: 682px;
+    padding: 20px 15px 20px 15px;
+  }
+  .about-col h2 {
+    font-size: 30px;
+    color: #fff;
+    font-family: "HalantBold", sans-serif;
+    text-transform: capitalize;
+    line-height: 1;
+    padding: 0px 0px 20px 0px;
+  }
+  .about-col span {
+    display: block;
+    font-size: 30px;
+    text-transform: capitalize;
+    color: #fff;
+    font-family: "Halant", sans-serif;
+    line-height: 1;
+  }
+  .about-col p {
+    font-size: 15px;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.75;
+    padding: 0px 0px 20px 0px;
+  }
+  .about-col .default-btn {
+    display: block;
+    width: 100px;
+    font-size: 15px;
+    margin-left: auto;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    padding: 10px 10px;
+  }
+  .mob-gap {
+    width: 100%;
+    height: 530px;
+    display: block;
+  }
+  .about-section h3 {
+    font-family: "Halant", sans-serif;
+    font-size: 30px;
+    text-transform: capitalize;
+    line-height: 1;
+    color: #fff;
+    padding: 20px 0 40px;
+  }
+  .about-slider {
+    max-width: 535px;
+    position: relative;
+  }
+  .about-slider::before {
+    content: "";
+    position: absolute;
+    background: url(../images/about-arrow.png) no-repeat center;
+    background-size: contain;
+    height: 54px;
+    width: 75px;
+    top: -30px;
+    left: 3px;
+  }
+  .about-slider-content p {
+    font-size: 15px;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.65;
+    position: relative;
+  }
+  .about-slider-content span {
+    display: block;
+    text-align: end;
+    font-size: 19px;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.65;
+  }
+  .about-slider .slick-dots {
+    text-align: end;
+    right: -10px !important;
+  }
+  .about-slider .slick-dots li {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #ff7b14;
+  }
+  .about-slider .slick-dots li.slick-active {
+    background-color: #fff !important;
+  }
+  /* footer */
+  .footer {
+    padding: 0 0 70px;
+    background-color: #281506;
+  }
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-left {
+    width: 222px;
+    order: 2;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+
+  .footer-left p {
+    color: #fff;
+    font-size: 9px;
+    line-height: 1.1;
+    font-family: "Nunito", sans-serif;
+    margin: 10px 0 0 0;
+  }
+  .footer-left a {
+    color: #ff7b14;
+    display: inline-block;
+  }
+  .footer-center {
+    width: 219px;
+    display: flex;
+    order: 1;
+    margin-bottom: 30px;
+  }
+  .footer-center ul {
+    padding-top: 60px;
+  }
+  .footer-center ul:first-child {
+    padding-right: 12px;
+    position: relative;
+  }
+  .footer-center ul:first-child:after {
+    content: "";
+    position: absolute;
+    background-color: #ff7c14;
+    width: 1px;
+    height: 225px;
+    right: 0;
+    top: -18px;
+  }
+  .footer-center ul:last-child {
+    padding-left: 12px;
+  }
+  .footer-center ul li a {
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 0.9;
+    text-transform: uppercase;
+    font-family: "Nunito", sans-serif;
+  }
+  .footer-right {
+    order: 3;
+    width: 206px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  .footer-right span {
+    font-size: 12px;
+    color: #fff;
+    line-height: 0.9;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: "lato", sans-serif;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .toggle-menu {
+    background-color: #572a08;
+  }
+  .toggle-menu:before {
+    background-color: #572a08;
+  }
+  .toggle-menu:after {
+    background-color: #572a08;
+  }
+  .header {
+    padding: 0 15px;
+  }
+
+  .logo {
+    padding: 0px 0 0;
+    width: 200px;
+  }
+  .desk-logo {
+    margin: 20px 0px;
+    display: block;
+  }
+  .mob-logo {
+    display: none;
+  }
+  .banner-section {
+    background: url(../images/banner.jpg) no-repeat;
+    background-position: 65%;
+    background-size: cover;
+    padding: 220px 0px 80px 0px;
+  }
+  .banner-col {
+    max-width: 500px;
+  }
+  .banner-section h1 {
+    font-size: 22px;
+  }
+
+  .banner-caption {
+    width: 100%;
+    font-size: 50px;
+  }
+  .banner-subtitle {
+    display: block;
+    font-size: 16px;
+  }
+  .banner-section .default-btn {
+    display: block;
+    width: 285px;
+  }
+  .banner-quote-slider {
+    display: block !important;
+    padding: 35px 0px 20px 40px;
+    max-width: 600px;
+    margin: 0 auto 0 0;
+  }
+  .banner-quote-slider::before {
+    width: 26px;
+    height: 19px;
+    left: 0;
+    top: 21px;
+  }
+  .banner-quote p {
+    font-size: 15px;
+    padding: 0px 0px 10px 0px;
+  }
+  .banner-quote span {
+    text-align: end;
+    font-size: 16px;
+  }
+  .banner-logo-row img {
+    width: 100%;
+  }
+  /* attorney-section  */
+  .attorney-section {
+    padding: 150px 0px 160px;
+    background-color: #281506;
+    position: relative;
+  }
+  .attorney-section::before {
+    left: 0px;
+    top: 310px;
+    width: 314px;
+    height: 633px;
+  }
+  .attorney-section .container {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .attorney-left {
+    width: 60%;
+    align-items: center;
+  }
+  .attorney-tagline {
+    font-size: 40px;
+  }
+  .attorney-slider {
+    max-width: 324px;
+  }
+  .attorney-slider-title {
+    font-size: 30px;
+    padding: 107px 0px 35px;
+  }
+  .attorney-slider {
+    max-width: 324px;
+  }
+  .attorney-right {
+    width: 35%;
+    margin: 0;
+  }
+  .attorney-right p {
+    font-size: 15px;
+    padding: 0 0 40px;
+  }
+  .attorney-right a {
+    display: inline;
+  }
+  /* case-result-section */
+  .case-result-section {
+    background-color: #ff7c14;
+    padding: 60px 0 45px 0;
+  }
+  .case-result-section .container {
+    width: 100%;
+    padding: 0 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .case-left {
+    width: 78%;
+  }
+  .case-slider {
+    margin: 0;
+    width: 100%;
+    flex-direction: row;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .title-center {
+    text-align: center;
+  }
+  .amount {
+    font-size: 50px;
+  }
+  .dollar-sign {
+    font-size: 50px;
+  }
+  .case-right {
+    width: 20%;
+    max-width: 225px;
+    margin: 0;
+  }
+  .case-slider .slick-dots li {
+    display: none;
+  }
+  .case-slider .slick-prev {
+    display: none !important;
+  }
+  .case-slider .slick-next {
+    display: none !important;
+  }
+  .case-right .default-btn {
+    padding: 15px 0px;
+    font-size: 13px;
+  }
+  /* services section */
+  .practice-area-inner {
+    max-width: 720px;
+    columns: 2;
+    column-gap: 10px;
+  }
+  .practice-area-col {
+    margin: 30px 0px 0px 0px;
+    width: 360px;
+  }
+  .col-2 {
+    padding: 70px 0px 0px 0px;
+  }
+  .practice-area-col:first-child {
+    margin: 0px;
+  }
+  .practice-area-col h2 {
+    font-size: 24px;
+    padding: 0px 0px 15px 0px;
+  }
+  .practice-area-col p {
+    padding: 0px 0px 30px 0px;
+  }
+  .ptactice-area a {
+    font-size: 18px;
+    bottom: 0;
+    right: 70px;
+  }
+  .practice-area-col a::before {
+    left: -50px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  /* phil0sophy-section */
+  .philosophy-inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .philosophy-left {
+    width: 47%;
+    padding: 0px;
+  }
+  .philosophy-detail {
+    max-width: 363px;
+    padding: 0px;
+  }
+  .philosophy-detail h3 {
+    font-size: 23px;
+  }
+  .philosophy-tagline {
+    font-size: 14px;
+  }
+  .philosophy-detail p {
+    font-size: 13px;
+  }
+  .philosophy-section h2 {
+    font-size: 70px;
+  }
+  .philosophy-section h2 span {
+    font-size: 34px;
+  }
+  .philosophy-right {
+    position: absolute;
+    width: 300px;
+  }
+  .philosophy-right p {
+    font-size: 16px;
+    width: 350px;
+    right: 50px;
+    bottom: -80px;
+  }
+  .philosophy-right p::before {
+    right: -20px;
+    left: auto;
+    bottom: 20px;
+    top: auto;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+  }
+  .philosophy-right::before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 18px);
+    height: 100%;
+    border: 2px solid #fff;
+    border-right: none;
+    top: 20px;
+    left: -20px;
+  }
+  /* rights section  */
+
+  .rights-col {
+    width: 32%;
+    padding: 0px;
+  }
+  .rights-col img {
+    width: 55px;
+    height: 80px;
+    object-fit: none;
+  }
+  .rights-section h2 {
+    font-size: 38px;
+  }
+  .rights-tagline {
+    font-size: 18px;
+  }
+  .rights-col h3 {
+    font-size: 22px;
+  }
+  .rights-col p {
+    font-size: 14px;
+  }
+  /* about-section  */
+  .about-section {
+    background: url(../images/aboutbg.jpg) no-repeat;
+    background-position: 50%;
+    background-size: cover;
+  }
+  .about-section .container {
+    max-width: 500px;
+    padding: 131px 20px 91px 20px;
+    background-color: #714826;
+    opacity: 0.95;
+  }
+  .about-col {
+    padding: 0 0 40px;
+  }
+  .about-col h2 {
+    font-size: 40px;
+    padding: 0px 0px 50px 0px;
+  }
+  .about-col span {
+    display: block;
+    font-size: 40px;
+    text-transform: capitalize;
+    color: #fff;
+    font-family: "Halant", sans-serif;
+    line-height: 1;
+  }
+  .about-col p {
+    font-size: 16px;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.75;
+    padding: 0px 0px 30px 0px;
+  }
+  .about-col .default-btn {
+    display: block;
+    width: 164px;
+    font-size: 22px;
+    margin-left: auto;
+    text-align: center;
+    padding: 15px 10px;
+  }
+  .about-section h3 {
+    font-size: 40px;
+    padding-bottom: 40px;
+  }
+  .about-slider {
+    max-width: 535px;
+    position: relative;
+    padding: 0 0 0 91px;
+  }
+  .about-slider::before {
+    content: "";
+    position: absolute;
+    background: url(../images/about-arrow.png) no-repeat center;
+    background-size: contain;
+    height: 54px;
+    width: 75px;
+    top: 0;
+    left: 3px;
+  }
+  .about-slider-content p {
+    font-size: 19px;
+    position: relative;
+  }
+  .mob-gap {
+    display: none;
+  }
+  .about-slider-content span {
+    display: block;
+    text-align: end;
+    font-size: 19px;
+  }
+  .about-slider .slick-dots {
+    text-align: end;
+    right: -10px !important;
+  }
+  .about-slider .slick-dots li {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #ff7b14;
+  }
+  .about-slider .slick-dots li.slick-active {
+    background-color: #fff !important;
+  }
+  .footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: normal;
+  }
+  .footer-left {
+    order: 1;
+    margin-bottom: 0;
+  }
+  .footer-left p {
+    margin: 15px 0 0 0;
+  }
+  .footer-center {
+    order: 2;
+    margin-bottom: 0;
+  }
+  .footer-right {
+    order: 3;
+  }
+  .footer-right span {
+    text-align: start;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .toggle-menu {
+    display: none;
+  }
+  .header {
+    z-index: 99;
+    background-color: #fff;
+    padding: 0 0 0 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+  }
+  .desk-logo {
+    margin: 0px 0px;
+  }
+  .logo {
+    padding: 25px 0 0;
+    width: 150px;
+  }
+  .nav-bar {
+    padding: 0px;
+    margin: 10px 0 0;
+    width: 600px;
+    visibility: visible;
+    opacity: 1;
+  }
+  .nav-list {
+    padding: 0;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-list li {
+    border-bottom: none;
+  }
+  .nav-list li a {
+    font-size: 12px;
+  }
+  .lang-selector::before {
+    display: inline;
+    border-left: 1px solid #ff7b14;
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    width: 2px;
+    height: 100%;
+  }
+  .header-contact {
+    display: block;
+    padding: 20px 10px;
+    width: 170px;
+  }
+  .header-contact a {
+    font-size: 21px;
+  }
+  .header-contact span {
+    font-size: 8.5px;
+  }
+
+  .dropdown-menu i {
+    position: absolute;
+    top: 15px;
+    right: -15px;
+    color: #ff7b14;
+    font-size: 12px;
+  }
+  .dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    position: absolute;
+    min-width: 230px;
+    top: 40px;
+    transition: 0.7s;
+    padding: 10px 0 0 0;
+  }
+  .dropdown-content li {
+    border-bottom: 1px solid #ff9340;
+  }
+  .dropdown-content li a {
+    font-size: 12px;
+  }
+  .dropdown-content li a:hover {
+    color: #572a08;
+    background-color: transparent;
+  }
+  .dropdown-menu:hover .dropdown-content {
+    height: 280px;
+  }
+  /* banner */
+  .banner-section {
+    background-position: center;
+  }
+  .banner-col {
+    max-width: 720px;
+  }
+
+  .banner-quote-slider {
+    display: block !important;
+    padding: 35px 0px 20px 40px;
+    max-width: 600px;
+    margin: 0 auto 0 0;
+  }
+  .banner-quote-slider::before {
+    width: 26px;
+    height: 19px;
+    left: 0;
+    top: 21px;
+  }
+  .banner-quote p {
+    font-size: 19px;
+    padding: 0px 0px 10px 0px;
+  }
+  .banner-quote span {
+    text-align: end;
+    font-size: 16px;
+  }
+  .rights-section h2 {
+    font-size: 42px;
+  }
+  .rights-caption {
+    font-size: 22px;
+  }
+  .rights-col h3 {
+    font-size: 24px;
+  }
+  .rights-col p {
+    font-size: 15px;
+  }
+
+  /* attorney-section  */
+  .attorney-tagline {
+    font-size: 48px;
+  }
+  .attorney-slider-title {
+    font-size: 36px;
+  }
+
+  .attorney-right p {
+    font-size: 16px;
+  }
+  .attorney-right a {
+    font-size: 16px;
+  }
+  .case-left {
+    max-width: 830px;
+    width: 78%;
+  }
+  .case-slider {
+    margin: 0;
+    width: 100%;
+    flex-direction: row;
+    height: 130px !important;
+  }
+  .case-slider-content {
+    padding: 7px;
+  }
+  .case-slider-content::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 135px;
+    background-color: #572a09;
+    top: 0;
+    left: 0px;
+  }
+  .vehicle-text::before {
+    display: none;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .title-center {
+    text-align: center;
+  }
+  .amount {
+    font-size: 50px;
+  }
+  .dollar-sign {
+    font-size: 50px;
+  }
+  .case-right .default-btn {
+    padding: 20px 0px;
+    font-size: 16px;
+  }
+
+  /* practice-area-section */
+  .practice-area-section .container {
+    padding: 100px 0px 40px 0px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .philosophy-section h2 {
+    font-size: 90px;
+  }
+  .philosophy-section h2 span {
+    font-size: 44px;
+  }
+  .philosophy-right {
+    width: 500px;
+    height: 620px;
+  }
+  .philosophy-right img {
+    width: 100%;
+    height: 100%;
+  }
+  .philosophy-right p {
+    font-size: 25px;
+    width: 560px;
+    right: 50px;
+  }
+  .philosophy-tagline {
+    font-size: 16px;
+  }
+  .philosophy-detail h3 {
+    font-size: 28px;
+  }
+  .philosophy-detail p {
+    font-size: 15px;
+  }
+  /* about-section  */
+  .about-section {
+    background: url(../images/aboutbg.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .about-section .container {
+    max-width: 682px;
+    padding: 131px 42px 91px 42px;
+    background-color: #714826;
+    opacity: 0.95;
+  }
+
+  .about-col {
+    padding: 0 0 107px;
+  }
+  .about-col h2 {
+    font-size: 68px;
+    padding: 0px 0px 50px 0px;
+  }
+  .about-col span {
+    display: block;
+    font-size: 58px;
+    text-transform: capitalize;
+    color: #fff;
+    font-family: "Halant", sans-serif;
+    line-height: 1;
+  }
+  .about-col p {
+    font-size: 16px;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.75;
+    padding: 0px 0px 30px 0px;
+  }
+  .about-col .default-btn {
+    display: block;
+    width: 164px;
+    font-size: 22px;
+    margin-left: auto;
+    text-align: center;
+    padding: 15px 10px;
+  }
+  .about-section h3 {
+    font-size: 58px;
+    padding-bottom: 40px;
+  }
+  .about-slider {
+    max-width: 535px;
+    position: relative;
+    padding: 0 0 0 91px;
+  }
+  .about-slider::before {
+    content: "";
+    position: absolute;
+    background: url(../images/about-arrow.png) no-repeat center;
+    background-size: contain;
+    height: 54px;
+    width: 75px;
+    top: 0;
+    left: 3px;
+  }
+  .about-slider-content p {
+    font-size: 19px;
+    position: relative;
+  }
+  .about-slider-content span {
+    display: block;
+    text-align: end;
+    font-size: 19px;
+  }
+  .about-slider .slick-dots {
+    text-align: end;
+    right: -20px !important;
+  }
+  .about-slider .slick-dots li {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #ff7b14;
+  }
+  .about-slider .slick-dots li.slick-active {
+    background-color: #fff !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .header {
+    padding: 0px 0 0 25px;
+  }
+  .logo {
+    padding: 0;
+    margin: 30px 0 0;
+    width: 213px;
+  }
+  .nav-bar {
+    margin: 15px 0 0;
+    width: 650px;
+  }
+  .nav-list li a {
+    font-size: 14px;
+  }
+  .header-contact {
+    padding: 20px 20px;
+    width: 250px;
+  }
+  .header-contact a {
+    font-size: 30px;
+  }
+  .header-contact span {
+    font-size: 12px;
+  }
+  .dropdown-content {
+    top: 49px;
+  }
+  .dropdown-menu i {
+    top: 13px;
+    right: -15px;
+    font-size: 14px;
+  }
+  /* banner-section */
+
+  .banner-section .container {
+    padding: 0;
+    max-width: 1100px;
+    margin: 0 auto 0 139px;
+  }
+  .banner-caption {
+    font-size: 72px;
+  }
+  .banner-subtitle {
+    font-size: 21px;
+  }
+  /* attorney-section  */
+  .attorney-section .container {
+    padding: 0;
+    padding: 0 139px;
+  }
+  .attorney-tagline {
+    font-size: 50px;
+  }
+  .attorney-right {
+    font-size: 15px;
+  }
+  /* case-section  */
+  .case-result-section .container {
+    padding: 0 139px;
+    align-items: center;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .amount {
+    font-size: 58px;
+  }
+  .dollar-sign {
+    font-size: 58px;
+  }
+  .case-right .default-btn {
+    font-size: 18px;
+  }
+  .philosophy-section h2 {
+    font-size: 100px;
+  }
+  /* .philosophy-section */
+  .philosophy-section .container {
+    max-width: 1100px;
+    padding: 0;
+    margin: 0 auto 0 139px;
+  }
+  .philosophy-section h2 span {
+    font-size: 50px;
+  }
+  .philosophy-right {
+    width: 500px;
+  }
+  .philosophy-right p {
+    font-size: 28px;
+    width: 720px;
+    right: 60px;
+  }
+  .philosophy-detail p {
+    font-size: 15.5px;
+  }
+  .rights-section .container {
+    padding: 0 139px;
+    margin: 0;
+  }
+  .about-section .container {
+    margin: 0 auto 0 88px;
+  }
+  .footer .container {
+    padding: 0 139px;
+  }
+}
+@media only screen and (min-width: 1350px) {
+  .header {
+    padding: 0px 0 0 35px;
+  }
+  .logo {
+    margin: 29px 0 0;
+    width: 213px;
+  }
+  .nav-bar {
+    margin: 14px 0 0;
+    width: 765px;
+  }
+  .nav-list li a {
+    font-size: 16px;
+  }
+  .header-contact {
+    padding: 22px 24px 22px 24px;
+    width: 300px;
+  }
+  .header-contact a {
+    font-size: 36px;
+  }
+  .header-contact span {
+    font-size: 14px;
+  }
+  .dropdown-content {
+    top: 60px;
+    height: 200px;
+  }
+  .dropdown-content li a {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+  .dropdown-menu i {
+    top: 12px;
+    right: -18px;
+    font-size: 16px;
+  }
+  /* banner-section */
+  .banner-caption {
+    font-size: 72px;
+  }
+  .attorney-left {
+    width: 600px;
+  }
+  .attorney-tagline {
+    font-size: 58px;
+  }
+  .attorney-right {
+    width: 340px;
+  }
+  .attorney-right p {
+    font-size: 16px;
+  }
+}

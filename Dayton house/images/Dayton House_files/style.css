@@ -1,0 +1,813 @@
+/* ..... Global styling starts */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-size: 18px;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  color: #272727;
+  font-size: 18px;
+  line-height: 1;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0px;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+.default-btn {
+  padding: 12px 20px;
+  background-color: #f5dc07;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #766900;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.default-btn {
+  padding: 12px 23px 12px 20px;
+  background-color: #f5dc07;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0px;
+  color: #766900;
+}
+/* HEADER  */
+.header-top {
+  position: relative;
+  background-color: #e0e2eb;
+  clip-path: polygon(28% 0, 100% 0, 100% 100%, 30% 100%);
+}
+
+.header-top .header-top-inner {
+  width: 950px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 0 auto;
+}
+
+.header-top-list {
+  padding: 10px 0px 10px;
+  width: 531px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-top-list li a {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0px;
+  color: #8a8b93;
+  transition: 0.3s;
+}
+.header-top-list li a:hover {
+  color: #272727;
+}
+.social-icons {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.social-icons li {
+  position: relative;
+  color: #8a8b93;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.social-icons li :hover {
+  color: #272727;
+}
+.social-icons li a :hover {
+  color: #272727;
+}
+.social-icons li::before {
+  content: "";
+  border-left: 1px solid #d3d5dd;
+  position: absolute;
+  min-height: 40px;
+  left: -15px;
+  top: -12px;
+}
+
+.social-icons li i {
+  color: #8a8b93;
+  font-size: 14px;
+}
+.header-country {
+  margin-right: 10px;
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  line-height: 3;
+}
+.social-icons li:last-child {
+  padding-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #d3d5dd;
+}
+.social-icons li:last-child:before {
+  top: -4px;
+}
+
+.header-between {
+  padding: 36px 0px 35px;
+}
+.header-between .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  width: 160px;
+  position: absolute;
+  top: 15px;
+}
+.header-contact {
+  width: 414px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-contact span {
+  color: #607acf;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.header-contact li a {
+  color: #607acf;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  padding: 0 24px 0 10px;
+  position: relative;
+}
+.header-contact li:not(:last-child) ::after {
+  content: "";
+  position: absolute;
+  border-right: 1px solid #d3d5dd;
+  min-height: 40px;
+  top: -8px;
+  right: 0;
+}
+.header-contact .default-btn {
+  padding: 12px 23px 12px 20px;
+  background-color: #f5dc07;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #766900;
+}
+.header-contact .default-btn:before {
+  content: "\f086";
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  color: #766900;
+  font-weight: 900;
+  display: inline-block;
+  margin: 0px 7px 0px 0px;
+}
+/* HEADER BOTTOM */
+.header-bottom {
+  position: relative;
+  z-index: 99;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #051f72;
+}
+.nav-list li a {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 18px 30px;
+  color: #fff;
+  position: relative;
+  transition: 0.3s;
+  z-index: 99;
+}
+.nav-list li {
+  border-right: 1px solid #233a83;
+}
+.nav-list li:last-child {
+  border: none;
+}
+.nav-list li a:hover {
+  background-color: #f5dc07;
+  color: #766900;
+}
+
+/* BANNER */
+.banner-section {
+  background: url("../images/banner-bg.jpg") top center no-repeat;
+  background-size: cover;
+  margin-top: -24px;
+  padding: 100px 0px 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.banner-section .container {
+  width: 100%;
+}
+.reservation-form {
+  background-color: #5e7ad0e6;
+  width: 380px;
+  padding: 38px;
+}
+.form-title {
+  max-width: 160px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 29px;
+  line-height: 1.1;
+  letter-spacing: 0px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 38px;
+}
+.date-field input {
+  width: 100%;
+  padding: 15px 0px 17px 18px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  list-style: 1px;
+  letter-spacing: 0px;
+  color: #777777;
+  font-weight: 400;
+}
+.date-field {
+  position: relative;
+  margin-bottom: 12px;
+}
+.date-field::after {
+  content: "";
+  background: url("../images/form-calender.png");
+  position: absolute;
+  right: 16px;
+  top: 15px;
+  width: 15px;
+  height: 16px;
+}
+.number-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.number-field input {
+  width: 144px;
+  padding: 15px 0px 17px 18px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0px;
+  color: #777777;
+  font-weight: 400;
+  margin: 0px 0px 12px 0px;
+}
+.number-field .default-btn {
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 11px 25px;
+  background-color: #f5dc07;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  color: #766900;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.banner-bottom-tag {
+  position: absolute;
+  bottom: -23px;
+  display: inline-block;
+  width: 320px;
+  background-color: #051f72;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  padding: 14px 0px 12px;
+  text-align: center;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 100% 0, 97% 53%, 100% 100%, 0 100%, 3% 52%);
+}
+.banner-web-cam {
+  position: fixed;
+  top: 50%;
+  right: -80px;
+  transform: rotate(90deg);
+  padding: 12px 0px;
+  width: 210px;
+  background-color: #051f72;
+}
+.banner-web-cam li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.banner-web-cam span {
+  display: inline-block;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+/* PACKAGES SECTION */
+.packages-section {
+  padding: 100px 0px;
+}
+.packages-section .container {
+  display: flex;
+  justify-content: space-between;
+}
+.packages-col {
+  position: relative;
+  width: 380px;
+}
+.packages-col h2 {
+  max-width: 219px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+.packages-tag {
+  position: absolute;
+  top: -7px;
+  right: 24px;
+  min-height: 81px;
+  width: 63px;
+  background-color: #f5dc07;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 49% 83%, 0 100%, 0% 50%);
+}
+.packages-tag::before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  left: -2.5px;
+  top: 0.1px;
+  border-bottom: 6px solid #766900;
+  border-left: 6px solid transparent;
+}
+.golf-img {
+  position: relative;
+}
+.packages-tag h3 {
+  color: #766900;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-top: 15px;
+}
+.packages-tag span {
+  line-height: 1.2;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+}
+.packages-add-icon {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
+/* Accomodatiions-section */
+.accomodatiions-section {
+  background: url("../images/accomodation.png") center no-repeat;
+  background-size: cover;
+  height: 442px;
+}
+.accomodatiions-section .container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.accomodation-row-circle {
+  height: 502px;
+  width: 502px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: -28px;
+  bottom: 0;
+  border: 1px solid #efefef;
+  box-shadow: 0 0 0 7px #fff, 0 0 20px #000;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 47px 55px 87px 55px;
+}
+.accomodation-row-circle h3 {
+  font-size: 30px;
+  padding: 34px 0px 23px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #152a6b;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+.accomodation-row-circle p {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  color: #777777;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  text-align: center;
+  padding-bottom: 47px;
+}
+.accomodation-row-circle .default-btn {
+  padding: 13px 55px 13px 35px;
+  font-size: 20px;
+  position: relative;
+}
+.accomodation-row-circle .default-btn:after,
+.amenties-col-detail .default-btn::after {
+  content: "";
+  background: url("../images/View\ More\ -icon.png");
+  position: absolute;
+  top: 17px;
+  right: 30px;
+  width: 15px;
+  height: 13px;
+}
+/* Amenities-section */
+.amenities-section {
+  padding: 100px 0px;
+}
+.amenities-section .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.amenities-col {
+  width: 381px;
+  position: relative;
+  margin: 0 0 30px;
+}
+.pool-theme {
+  position: relative;
+}
+.amenities-col h2 {
+  max-width: 219px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+.amenities-col h2.amenities-detail {
+  max-width: 250px;
+}
+.pause-icon-wrapper {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #607acf;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+.amenities-add-icon {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+.amenties-col-detail {
+  width: 330px;
+  padding: 45px 0px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.amenties-col-detail h3 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 24px;
+  color: #152a6b;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  padding-bottom: 25px;
+}
+.amenties-col-detail p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #777777;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  padding-bottom: 35px;
+}
+.amenties-col-detail .default-btn {
+  padding: 13px 55px 13px 35px;
+  font-size: 20px;
+  position: relative;
+}
+
+/* RESORT SECTION */
+.resort-section {
+  background: url("../images/resort-bg.png") center no-repeat;
+  background-size: cover;
+  padding: 158px 0px;
+}
+.resort-section .container {
+  display: flex;
+  justify-content: flex-end;
+}
+.resort-col {
+  max-width: 400px;
+  padding: 0px 40px;
+  background-color: #607acf;
+  position: relative;
+}
+.resort-col h3 {
+  max-width: 225px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 35px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 52px 0px 24px;
+}
+.resort-col p {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding: 0px 0px 48px;
+}
+.resort-col-icon-wrapper {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 42px;
+  right: 40px;
+}
+
+/* trip advisor section */
+.trip-advisor-section {
+  padding: 100px 0px 67px;
+}
+.trip-advisor-section .container {
+  background-color: #eff0f4;
+  height: 400px;
+  padding: 57px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.trip-advisor-inner {
+  width: 1130px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.trip-advisor-left-col {
+  width: 295px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.trip-advisor-left-col h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  color: #495371;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 0px 0px 37px;
+  text-align: center;
+}
+.trip-advisor-left-col input {
+  padding: 11px 40px 11px 30px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.trip-advisor-left-col .default-btn {
+  padding: 12px 85px 10px 85px;
+  margin-bottom: 37px;
+  font-size: 18px;
+}
+.trip-advisor-left-col p {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+  color: #888888;
+}
+.trip-advisor-icon-row {
+  width: 171px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+.trip-advisor-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #495371;
+}
+.trip-advisor-circle {
+  height: 460px;
+  width: 460px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: -28px;
+  bottom: 0;
+  border: 1px solid #efefef;
+  box-shadow: 0 0 0 7px #fff, 0 0 20px #000;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 51px 61px;
+}
+.trip-advisor-circle-tagline {
+  display: inline-block;
+  padding-top: 67px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #696969;
+}
+.trip-advisor-address {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #589642;
+  padding-bottom: 20px;
+}
+.trip-advisor-arrows {
+  width: 63px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+.trip-advisor-arrows i {
+  color: #999999;
+  font-size: 25px;
+}
+/* Book-now-section */
+.book-now-section {
+  padding-bottom: 43px;
+}
+.book-now-section .container {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.book-now-list li {
+  width: 251px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.book-now-list li a {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 32px;
+  color: #152a6b;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.book-now-images-row {
+  width: 460px;
+  margin: 0px 84px 0px 55px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 27px 20px 55px;
+  border-right: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+}
+.book-now-section .default-btn {
+  padding: 13px 47px;
+  font-size: 22px;
+}
+/* FOOTER */
+.footer {
+  background: url("../images/footer-bg.png") center no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.footer-top {
+  padding: 73px 0px 38px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-logos-col {
+  width: 192px;
+}
+.footer-social-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.footer-social-icons i {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  background-color: #5f79cd;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.footer-social-icons i:hover {
+  color: #152a6b;
+}

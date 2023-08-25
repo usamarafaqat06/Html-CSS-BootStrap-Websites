@@ -1,0 +1,582 @@
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Oxygen-Reg", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  background-color: #fff;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  color: #444445;
+  font-family: "Oxygen-Reg", sans-serif;
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+ul,
+ol,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+@font-face {
+  font-family: MontReg;
+  src: url(../fonts/Montserrat-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: MontBold;
+  src: url(../fonts/Montserrat-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: OpenLight;
+  src: url(../fonts/OpenSans-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: OpenItalic;
+  src: url(../fonts/OpenSans-LightItalic.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: OpenReg;
+  src: url(../fonts/OpenSans-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: FiraItalic;
+  src: url(../fonts/FiraSans-LightItalic.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: FiraReg;
+  src: url(../fonts/FiraSans-Regular.ttf);
+  font-weight: 400;
+}
+@media only screen and (min-width: 320px) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: transparent;
+    width: 100%;
+    transition: 0.4s;
+  }
+  .default-btn {
+    color: #fff;
+    font-size: 18px;
+    font-family: "MontReg", sans-serif;
+    line-height: 1;
+    padding: 10px;
+    transition: 0.3s;
+    text-align: center;
+    background-color: #48a5ff;
+    position: relative;
+    z-index: 0;
+    text-transform: capitalize;
+    overflow: hidden;
+  }
+  .default-btn::after {
+    content: "";
+    width: 0%;
+    background-color: #3883ce;
+    height: 100%;
+    display: block;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+  }
+  .default-btn:hover::after {
+    width: 100%;
+  }
+  header .navbar-brand img {
+    width: 210px;
+  }
+  header .navbar {
+    border-bottom: 2px solid #9a9b9b;
+    padding: 0px;
+    align-items: center;
+    padding: 10px 0px 15px;
+  }
+  .navbar-toggler {
+    border: 1px solid #fff;
+  }
+  header .nav-link {
+    color: #fff;
+    font-family: "MontReg", sans-serif;
+    text-transform: uppercase;
+    padding: 10px 0px !important;
+    transition: 0.4s;
+    position: relative;
+    font-size: 18px;
+  }
+  header .nav-item .default-btn {
+    margin: 15px 0 0;
+    padding: 11px 12px;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #3883ce;
+  }
+  header .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    right: 50%;
+    transition: 0.3s;
+    border-bottom: 5px solid #48a5ff;
+  }
+  header .nav-link:hover::after {
+    width: 100%;
+    right: 0%;
+  }
+  header .nav-link:hover {
+    color: #48a5ff;
+  }
+  header .nav-link.active {
+    color: #fff !important;
+  }
+
+  header .nav-link.active:hover {
+    color: #48a5ff !important;
+  }
+  .header-bottom-bg {
+    background-color: #041424;
+  }
+  .header-bg {
+    background-color: #041424;
+  }
+  header .navbar-nav {
+    padding: 20px 0 0;
+  }
+  /* Banner-section */
+  .banner-section {
+    background: url(../images/banner.png) no-repeat center;
+    background-size: cover;
+    padding: 120px 0px 70px;
+  }
+  .banner-section h1 {
+    color: #fff;
+    font-family: "MontBold", sans-serif;
+    font-size: 25px;
+    line-height: 1.3;
+    padding: 0 0 20px;
+    text-align: center;
+  }
+  .banner-section span {
+    color: #fff;
+    font-family: "OpenItalic", sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    padding: 0 0 53px;
+    text-align: center;
+    display: block;
+    max-width: 441px;
+  }
+  .banner-section .default-btn {
+    padding: 9px 16px;
+  }
+  .banner-section .default-btn:after {
+    background-color: #041424;
+  }
+  /* Solutions-section */
+  .solutions-section {
+    padding: 87px 0px 129px;
+  }
+  .default-heading {
+    color: #000;
+    font-size: 20px;
+    font-family: "MontBold", sans-serif;
+    line-height: 1.3;
+    text-align: center;
+    padding: 0 0 16px;
+  }
+  .default-span {
+    color: #777875;
+    font-size: 14px;
+    font-family: "FiraReg", sans-serif;
+    line-height: 1.5;
+    text-align: center;
+    display: block;
+    padding: 0 0 93px;
+  }
+  .solutions-wrapper {
+    border-radius: 50%;
+    height: 130px;
+    width: 130px;
+    overflow: hidden;
+    margin: 0 0 39px 0;
+    position: relative;
+  }
+  .solutions-wrapper:hover img {
+    transform: scale(1.2);
+  }
+  .solutions-wrapper:hover::before {
+    background-color: #48a3ff86;
+  }
+  .solutions-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .solutions-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: 0.3s;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  .solutions-box h3 {
+    color: #48a5ff;
+    font-size: 22px;
+    padding: 0 0 15px;
+    font-family: "MontBold", sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .solutions-box p {
+    color: #5a5b56;
+    font-size: 15px;
+    line-height: 1.7;
+    font-family: "OpenReg", sans-serif;
+    text-align: center;
+  }
+  .r-gap {
+    row-gap: 40px;
+  }
+  /* SHIPPING-SECTION */
+  .shipping-section {
+    background: url(../images/shipping-bg.png) no-repeat center;
+    background-size: cover;
+    padding: 71px 0px;
+  }
+  .shipping-section h3 {
+    color: #fff;
+    font-family: "MontBold", sans-serif;
+    font-size: 26px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    padding: 0 0 20px;
+    max-width: 302px;
+  }
+  .shipping-section p {
+    color: #fff;
+    font-family: "OpenItalic", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0 0 20px;
+  }
+  .shipping-number {
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-family: "OpenLight", sans-serif;
+    font-size: 25px;
+    padding-bottom: 10px;
+    line-height: 1.3;
+  }
+  .shipping-title {
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-family: "MontBold", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+  .shipping-gap {
+    row-gap: 41px;
+  }
+  .services-section {
+    padding: 97px 0px 50px;
+  }
+  .services-section .default-span {
+    padding: 0 0 70px;
+    font-family: "FiraItalic", sans-serif;
+  }
+  .services-col img {
+    object-fit: contain;
+  }
+  .services-col h3 {
+    font-family: "MontReg", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #464646;
+    line-height: 1;
+    padding: 36px 0 23px;
+    text-transform: uppercase;
+  }
+  .services-col p {
+    color: #474e5d;
+    font-size: 14px;
+    font-family: "FiraReg", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+  }
+  /* transport-row */
+  .transport-row {
+    background-color: #000;
+    padding: 20px 0px;
+  }
+  .transport-row span {
+    display: block;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #fff;
+    font-weight: 400;
+    font-family: "MontReg", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .transport-row .default-btn {
+    width: 140px;
+    background-color: #48a5ff;
+    font-weight: 400;
+    font-family: "MontReg", sans-serif;
+    text-transform: capitalize;
+    color: #fff;
+    padding: 10px 0px;
+    font-size: 15px;
+  }
+  /* footer */
+  footer {
+    padding: 57px 0px 33px;
+    background-color: #54575a;
+  }
+  .footer-logo-col img {
+    margin: 0 0 22px;
+  }
+  .footer-logo-col span {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: "FiraReg", sans-serif;
+  }
+  .footer-logo-col a {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: "FiraReg", sans-serif;
+  }
+  .footer-col h3 {
+    font-family: "MontReg", sans-serif;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    padding: 0px 0 22px;
+    text-transform: uppercase;
+  }
+  .footer-col a {
+    color: #fff;
+    font-size: 12px;
+    line-height: 2;
+    font-weight: 400;
+    font-family: "FiraReg", sans-serif;
+    text-transform: capitalize;
+  }
+  .copyright-section {
+    padding: 79px 0 0;
+  }
+  .copyright-section span {
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+    font-family: "FiraReg", sans-serif;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .banner-section {
+    padding: 200px 0px 100px;
+  }
+  .banner-section h1 {
+    font-size: 33px;
+  }
+  .banner-section span {
+    font-size: 25px;
+  }
+  .default-heading {
+    font-size: 30px;
+  }
+  .solutions-section .default-span {
+    font-size: 15px;
+  }
+  .r-gap {
+    row-gap: 73px;
+  }
+  .shipping-section {
+    background-position: 65%;
+  }
+  .shipping-col h3 {
+    font-size: 30px;
+  }
+  .shipping-col p {
+    font-size: 16px;
+  }
+  .shipping-number {
+    font-size: 37px;
+  }
+  .shipping-title {
+    font-size: 16px;
+  }
+  .services-section .default-span {
+    font-size: 25px;
+  }
+  .services-col h3 {
+    font-size: 16px;
+  }
+  .services-section {
+    padding: 97px 0px 107px;
+  }
+  .solutions-box p {
+    font-size: 14px;
+  }
+  .transport-row .default-btn {
+    width: 178px;
+    font-size: 25px;
+  }
+  .transport-row span {
+    text-align: start;
+    line-height: 1;
+    font-size: 25px;
+  }
+  .footer-logo-col img {
+    width: 160px;
+  }
+  .footer-col h3 {
+    font-size: 14px;
+  }
+  .copyright-section span {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  header .navbar-brand img {
+    width: 332px;
+  }
+  header .navbar-nav {
+    padding: 0px;
+    column-gap: 30px;
+  }
+  header .navbar {
+    border-bottom: 2px solid #9a9b9b;
+    padding: 0px;
+    align-items: center;
+    padding: 10px 0px 0px;
+  }
+  header .nav-link {
+    padding: 30px 0px 35px 0px !important;
+  }
+  .solutions-wrapper {
+    width: 218px;
+    height: 218px;
+  }
+  .banner-section {
+    padding: 307px 0px 205px 0px;
+  }
+  .banner-section h1 {
+    font-size: 40px;
+  }
+  .solutions-section .default-span {
+    font-size: 16.5px;
+  }
+  .shipping-section p {
+    font-size: 17px;
+  }
+  .services-col h3 {
+    font-size: 20px;
+  }
+  .footer-col h3 {
+    padding: 20px 0 22px;
+  }
+  .footer-logo-col img {
+    width: auto;
+  }
+  .footer-col h3 {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .banner-section h1 {
+    font-size: 43px;
+  }
+  .solutions-section .default-span {
+    font-size: 19.5px;
+  }
+  .shipping-col {
+    padding: 0 0 0 30px;
+  }
+  .shipping-section p {
+    font-size: 20px;
+  }
+  header .navbar-nav {
+    column-gap: 50px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header .navbar-nav {
+    column-gap: 64px;
+  }
+  .solutions-section .default-span {
+    font-size: 20px;
+  }
+  .shipping-col {
+    padding: 0 0 0 60px;
+  }
+}
+
+@media only screen and (min-width: 1640px) {
+  header .container {
+    max-width: 1623px;
+  }
+}
